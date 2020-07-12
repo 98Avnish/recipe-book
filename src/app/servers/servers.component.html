@@ -1,0 +1,18 @@
+<p>servers works!</p>
+<p>{{ serverName }}:
+  <span [ngStyle]="{'color': status?'green':'red'}">
+    {{ status? "Active" : "Down" }}
+  </span></p>
+<label>
+  Server Name:
+  <input type="text" [(ngModel)]="serverName" />
+</label>
+<br>
+<label>
+  Status:
+  <input type="checkbox" (change)="toggleServer()" [checked]="status"/>
+</label>
+<br>
+<button [disabled]="!status" (click)="toggleServer()" class="btn btn-danger">
+  Deactivate
+</button>
